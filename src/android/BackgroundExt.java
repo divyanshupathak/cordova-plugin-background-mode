@@ -263,7 +263,7 @@ class BackgroundExt {
             return;
         }
 
-        int level = PowerManager.SCREEN_DIM_WAKE_LOCK |
+        int level = PowerManager.PARTIAL_WAKE_LOCK |
                     PowerManager.ACQUIRE_CAUSES_WAKEUP;
 
         wakeLock = pm.newWakeLock(level, "BackgroundModeExt");
@@ -290,10 +290,10 @@ class BackgroundExt {
         app.runOnUiThread(new Runnable() {
             public void run() {
                 window.addFlags(
-                        FLAG_ALLOW_LOCK_WHILE_SCREEN_ON |
-                        FLAG_SHOW_WHEN_LOCKED |
-                        FLAG_TURN_SCREEN_ON |
-                        FLAG_DISMISS_KEYGUARD
+					FLAG_ALLOW_LOCK_WHILE_SCREEN_ON |
+					FLAG_SHOW_WHEN_LOCKED |
+					FLAG_TURN_SCREEN_ON |
+					FLAG_DISMISS_KEYGUARD
                 );
             }
         });
